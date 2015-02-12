@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+	<meta charset="UTF-8">
+	<title></title>
+</head>
+<body>
+<div style="background-color: green" onclick="blah(this)">
+	<table>
+		<tr>
+			<th onclick="blah(this)">Month</th>
+			<th onclick="blah(this)">Savings</th>
+		</tr>
+		<tr>
+			<td id="x" onclick="blah(this)">January</td>
+			<td onclick="blah(this)">$100</td>
+		</tr><
+		<tr>
+			<td id="y" onclick="blah(this)">February</td>
+			<td onclick="blah(this)">$80</td>
+		</tr>
+	</table>
+</div>
+<script>
+	var x = document.getElementById("x").style.visibility = "hidden";
+	var y = document.getElementById("y").style.visibility = "hidden";
+
+	var blah = function(element) {
+	    alert("You have clicked a" + element);
+	};
+</script>
+</body>
+</html>

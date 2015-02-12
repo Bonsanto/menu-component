@@ -12,9 +12,17 @@
 			<th onclick="blah(this)">Savings</th>
 		</tr>
 		<tr>
-			<td id="x" onclick="blah(this)">January</td>
-			<td onclick="blah(this)">$100</td>
-		</tr><
+			<td id="x" onclick="blah(this)">
+				<div>
+					January
+				</div>
+			</td>
+			<td onclick="blah(this)">
+				<div style="background-color: white">
+					$100
+				</div>
+			</td>
+		</tr>
 		<tr>
 			<td id="y" onclick="blah(this)">February</td>
 			<td onclick="blah(this)">$80</td>
@@ -25,8 +33,8 @@
 	var x = document.getElementById("x").style.visibility = "hidden";
 	var y = document.getElementById("y").style.visibility = "hidden";
 
-	var blah = function(element) {
-	    alert("You have clicked a" + element);
+	var blah = function (element) {
+		alert("You have clicked a" + element);
 	};
 </script>
 </body>

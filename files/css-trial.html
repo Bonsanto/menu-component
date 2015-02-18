@@ -21,7 +21,7 @@
             list-style:none;
         }
 
-        .nav li a {
+        .nav li div {
             background-color: black;
             color:white;
             text-decoration:none;
@@ -33,7 +33,7 @@
             float:left;
         }
 
-        .nav li a:hover{
+        .nav li div:hover{
             background-color: #434343;
         }
 
@@ -63,37 +63,43 @@
 <!--This is just a trial, the plan is to do this with web-components-->
 <div id="header">
     <ul class="nav">
-        <li><a href="">File</a>
+        <li><div>File</div>
             <ul>
-                <li><a href="">Open</a>
+                <li><div>Open</div>
                     <ul>
-                        <li><a href="">Open Recent</a>
+                        <li><div>Open Recent</div>
                             <ul>
-                                <li><a href="">Open</a></li>
-                                <li><a href="">Die</a></li>
-                                <li><a href="">Open From Web</a></li>
+                                <li><div>Open</div></li>
+                                <li><div>Die</div></li>
+                                <li><div>Open From Web</div></li>
                             </ul>
                         </li>
-                        <li><a href="">Open Last</a> </li>
-                        <li><a href="">Open From Web</a> </li>
+                        <li><div>Open Last</div> </li>
+                        <li><div>Open From Web</div>
+                            <ul>
+                                <li><div>Loco</div></li>
+                                <li><div>Die</div></li>
+                                <li><div>Open From Web</div></li>
+                            </ul>
+                        </li>
                     </ul>
                 </li>
-                <li><a href="">Close</a></li>
-                <li><a href="">Save</a></li>
-                <li><a href="">Save As</a></li>
+                <li><div>Close</div></li>
+                <li><div>Save</div></li>
+                <li><div>Save As</div></li>
             </ul>
         </li>
-        <li><a href="">Favio</a> </li>
-        <li><a href="">Alberto</a> </li>
-        <li><a href="">Help</a>
+        <li><div>Favio</div> </li>
+        <li><div>Alberto</div> </li>
+        <li><div>Help</div>
             <ul>
-                <li><a href="">Documentation</a></li>
-                <li><a href="">Help files</a></li>
-                <li><a href="">Web Help</a></li>
-                <li><a href="">Stack Overflow</a></li>
+                <li><div>Documentation</div></li>
+                <li><div>Help files</div></li>
+                <li><div>Web Help</div></li>
+                <li><div>Stack Overflow</div></li>
             </ul>
         </li>
-        <li><a href="">About</a> </li>
+        <li><div>About</div> </li>
     </ul>
 </div>
 

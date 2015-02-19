@@ -22,8 +22,11 @@
 		}
 
 		.nav li div {
-			background-color: black;
-			color: white;
+            background: -webkit-linear-gradient(black, blue); /* For Safari 5.1 to 6.0 */
+            background: -o-linear-gradient(black, blue); /* For Opera 11.1 to 12.0 */
+            background: -moz-linear-gradient(black, blue); /* For Firefox 3.6 to 15 */
+            background: linear-gradient(black, blue); /* Standard syntax */
+            color: white;
 			text-decoration: none;
 			padding: 10px 15px;
 			display: block;
@@ -39,8 +42,12 @@
 			float: left;
 		}
 
+        .nav li:hover > div{
+            background: #434343;
+        }
+
 		.nav li div:hover {
-			background-color: #434343;
+			background: #434343;
 		}
 
 		.nav li ul {
@@ -91,6 +98,39 @@
 								</li>
 								<li>
 									<div>Open FROM</div>
+                                    <ul>
+                                        <li>
+                                            <div>Open</div>
+                                        </li>
+                                        <li>
+                                            <div>Die</div>
+                                            <ul>
+                                                <li>
+                                                    <div>Open</div>
+                                                </li>
+                                                <li>
+                                                    <div>Die</div>
+                                                </li>
+                                                <li>
+                                                    <div>Open</div>
+                                                    <ul>
+                                                        <li>
+                                                            <div>Open</div>
+                                                        </li>
+                                                        <li>
+                                                            <div>Die</div>
+                                                        </li>
+                                                        <li>
+                                                            <div>Open FROM</div>
+                                                        </li>
+                                                    </ul>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <li>
+                                            <div>Open FROM</div>
+                                        </li>
+                                    </ul>
 								</li>
 							</ul>
 						</li>

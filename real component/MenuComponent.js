@@ -10,6 +10,7 @@ MenuProto.createdCallback = function () {
 	var style = document.createElement("style");
 	var div = document.createElement("div");
 	var ul = document.createElement("ul");
+	eval(readFiles(this)); //A settings variable appears.
 
 	div.className = "realdiv";
 	div.style.cursor = "default";
@@ -21,19 +22,20 @@ MenuProto.createdCallback = function () {
 	div.appendChild(ul);
 	shadow.appendChild(div);
 
-	lidivCreator(JSON.parse(this.getAttribute("content")).header).forEach(function (element) {
+
+	lidivCreator(settings.header).forEach(function (element) {
 		ul.appendChild(element);
 	});
 };
 
-var readFiles = function(element) {
+var readFiles = function (element) {
 	var xml = new XMLHttpRequest();
 
 	xml.onreadystatechange = function () {
-		if (xml.status === 200 && xml.readyState === 4) element.textContent = xml.responseText;
+		if (xml.status === 200 && xml.readyState === 4) return xml.responseText;
 	};
 
-	xml.open("GET", "componentSettings.js", true);
+	xml.open("GET", element.getAttribute("src"), false);
 	xml.send();
 };
 
@@ -41,10 +43,11 @@ var lidivCreator = function (xson) {
 	return xson.map(function (element) {
 		var li = document.createElement("li"),
 			div = document.createElement("div");
+
 		div.textContent = element.name;
 		li.appendChild(div);
-
 		console.log(element.children);
+
 		if (element.children !== null) {
 			var ul = document.createElement("ul");
 			li.appendChild(ul);

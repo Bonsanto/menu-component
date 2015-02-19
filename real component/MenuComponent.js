@@ -15,7 +15,7 @@ MenuProto.createdCallback = function () {
 	div.style.cursor = "default";
 	ul.className = "nav";
 	//todo: unfortunately this is how it is done :,(.
-	style.textContent = "* {padding: 0;margin: 0;} .realdiv {margin: auto;width: 500px; font-family: Arial, Helvetica, sans-serif;} ul, ol {list-style: none;} .nav li div {background-color: black;color: white;text-decoration: none;padding: 10px 15px;display: block;-webkit-touch-callout: none;-webkit-user-select: none;-khtml-user-select: none;-moz-user-select: none;-ms-user-select: none;user-select: none;} .nav > li {float: left;} .nav li div:hover {background-color: #434343;} .nav li ul {display: none;position: absolute;min-width: 40px;} .nav li:hover > ul {display: block;} .nav li ul li {position: relative;} .nav li ul li ul {right: -140px;top: 0;}";
+	style.textContent = "* {padding: 0;margin: 0;} .realdiv {margin: auto;width: 500px; font-family: Arial, Helvetica, sans-serif;} ul, ol {list-style: none;} .nav li div {background-color: black;color: white;text-decoration: none;padding: 10px 15px;display: block;-webkit-touch-callout: none;-webkit-user-select: none;-khtml-user-select: none;-moz-user-select: none;-ms-user-select: none;user-select: none;} .nav > li {float: left;} .nav li div:hover {background-color: #434343;} .nav li ul {display: none;position: absolute;min-width: 150px;} .nav li:hover > ul {display: block;} .nav li ul li {position: relative;} .nav li ul li ul {right: -150px;top: 0;}";
 
 	shadow.appendChild(style);
 	div.appendChild(ul);
@@ -26,9 +26,17 @@ MenuProto.createdCallback = function () {
 	});
 };
 
+var readFiles = function(element) {
+	var xml = new XMLHttpRequest();
 
-// ------>|------>
-// ------>|
+	xml.onreadystatechange = function () {
+		if (xml.status === 200 && xml.readyState === 4) element.textContent = xml.responseText;
+	};
+
+	xml.open("GET", "componentSettings.js", true);
+	xml.send();
+};
+
 var lidivCreator = function (xson) {
 	return xson.map(function (element) {
 		var li = document.createElement("li"),
@@ -47,6 +55,15 @@ var lidivCreator = function (xson) {
 		}
 		return li;
 	});
+};
+
+var settingsReader = function (location) {
+	//If all file API are supported ...
+	if (window.File && window.FileReader && window.FileList && window.Blob) {
+		var reader = new FileReader();
+	} else {
+		console.log("File API not supported");
+	}
 };
 
 var XMenu = document.registerElement('x-menu', {

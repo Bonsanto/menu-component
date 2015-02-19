@@ -1,4 +1,4 @@
-{
+var settings = {
 	"header": [
 		{
 			"name": "File",
@@ -8,9 +8,9 @@
 					"children": [
 						{
 							"name": "Open recent",
-							"children": null
-							//This is not valid.
-							"method": function() {
+							"children": null,
+							"onclick": function () {
+								alert("clicked on recent");
 							}
 						}
 					]
@@ -58,4 +58,4 @@
 			]
 		}
 	]
-}
+};

@@ -1,49 +1,3 @@
-/**
- *  The basic cell.
- *  {
- *      "table": [
- *      {
- *          "name": "File",
- *          "enable": true,
- *          "visibility": true,
- *          "st_hover": true,
- *          "children": null
- *      }]
- *   }
- *
- *  Not so basic cell.
- *  {
- *      "table": [{
- *          "name": "File",
- *          "enable": true,
- *          "visibility": true,
- *          "st_hover": true,
- *          "children": [{
- *              "name": "File",
- *              "enable": true,
- *              "visibility": true,
- *              "st_hover": true,
- *              "children": [{
- *                  "name": "File",
- *                  "enable": true,
- *                  "visibility": true,
- *                  "st_hover": true,
- *                  "children": null
- *              }]
- *          },
- *          {
- *              "name": "File",
- *              "enable": true,
- *              "visibility": true,
- *              "st_hover": true,
- *              "children": null
- *          }]
- *      }]
- *   }
- *
- * */
-
-
 var MenuProto = Object.create(HTMLDivElement.prototype);
 
 Object.defineProperty(MenuProto, 'content', {
@@ -52,35 +6,45 @@ Object.defineProperty(MenuProto, 'content', {
 });
 
 MenuProto.createdCallback = function () {
-	this.style.cursor = "default";
-
-	//todo: think a way to avoid the use of the id attribute.
-
 	var shadow = this.createShadowRoot();
-	//var _this = this;
-
+	var style = document.createElement("style");
+	var div = document.createElement("div");
 	var ul = document.createElement("ul");
-	ul.className = "nav";
-	shadow.appendChild(ul);
-	var lists = lidivCreator(this.getAttribute("content").header);
 
+	div.className = "realdiv";
+	div.style.cursor = "default";
+	//todo: unfortunately this is how it is done :,(.
+	style.textContent = "* {padding: 0;margin: 0;} .realdiv {margin: auto;width: 500px; font-family: Arial, Helvetica, sans-serif;} ul, ol {list-style: none;} .nav li div {background-color: black;color: white;text-decoration: none;padding: 10px 15px;display: block;-webkit-touch-callout: none;-webkit-user-select: none;-khtml-user-select: none;-moz-user-select: none;-ms-user-select: none;user-select: none;} .nav > li {float: left;} .nav li div:hover {background-color: #434343;} .nav li ul {display: none;position: absolute;min-width: 40px;} .nav li:hover > ul {display: block;} .nav li ul li {position: relative;} .nav li ul li ul {right: -140px;top: 0;}";
+	ul.className = "nav";
+
+	shadow.appendChild(style);
+	div.appendChild(ul);
+	shadow.appendChild(div);
+
+	lidivCreator(JSON.parse(this.getAttribute("content")).header).forEach(function (element) {
+		ul.appendChild(element);
+	});
 };
 
 
 // ------>|------>
 // ------>|
-//todo: simplify in 1 line Favio HW hint: foreach.
 var lidivCreator = function (xson) {
-	var lis = [];
-	var div;
+	return xson.map(function (element) {
+		var li = document.createElement("li"),
+			div = document.createElement("div"),
+			ul = document.createElement("ul");
+		div.textContent = element.name;
+		li.appendChild(div);
+		li.appendChild(ul);
 
-	//Content is the name of the property that holds the json.
-	for (var cell in xson) {
-		lis.push(document.createElement("li"));
-
-	}
-
-	return lis;
+		//if(xson.children !== null) {
+		//	lidivCreator(xson.children).forEach(function (element) {
+		//		ul.appendChild(element);
+		//	});
+		//}
+		return li;
+	});
 };
 
 var XMenu = document.registerElement('x-menu', {

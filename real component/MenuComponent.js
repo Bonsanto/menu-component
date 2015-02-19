@@ -38,11 +38,12 @@ var lidivCreator = function (xson) {
 		li.appendChild(div);
 		li.appendChild(ul);
 
-		//if(xson.children !== null) {
-		//	lidivCreator(xson.children).forEach(function (element) {
-		//		ul.appendChild(element);
-		//	});
-		//}
+		console.log(element.children);
+		if(element.children !== null) {
+			lidivCreator(element.children).forEach(function (ele) {
+				ul.appendChild(ele);
+			});
+		}
 		return li;
 	});
 };
@@ -50,64 +51,3 @@ var lidivCreator = function (xson) {
 var XMenu = document.registerElement('x-menu', {
 	prototype: MenuProto
 });
-
-var json = {
-	"header": [
-		{
-			"name": "File",
-			"children": [
-				{
-					"name": "File",
-					"children": [
-						{
-							"name": "File",
-							"children": null
-						}
-					]
-				},
-				{
-					"name": "File",
-					"children": null
-				}
-			]
-		},
-		{
-			"name": "Favio",
-			"children": [
-				{
-					"name": "File",
-					"children": [
-						{
-							"name": "File",
-							"children": null
-						}
-					]
-				},
-				{
-					"name": "File",
-					"children": null
-				}
-			]
-		},
-		{
-			"name": "Alberto",
-			"children": [
-				{
-					"name": "File",
-					"children": [
-						{
-							"name": "File",
-							"children": null
-						}
-					]
-				},
-				{
-					"name": "File",
-					"children": null
-				}
-			]
-		}
-	]
-};
-
-console.log(json.header.length); //The number of column of the first row should be showed.

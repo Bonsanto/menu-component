@@ -1,0 +1,61 @@
+{
+	"header": [
+		{
+			"name": "File",
+			"children": [
+				{
+					"name": "Open",
+					"children": [
+						{
+							"name": "Open recent",
+							"children": null
+							//This is not valid.
+							"method": function() {
+							}
+						}
+					]
+				},
+				{
+					"name": "Close",
+					"children": null
+				}
+			]
+		},
+		{
+			"name": "Favio",
+			"children": [
+				{
+					"name": "kill",
+					"children": [
+						{
+							"name": "rape",
+							"children": null
+						}
+					]
+				},
+				{
+					"name": "scam",
+					"children": null
+				}
+			]
+		},
+		{
+			"name": "Alberto",
+			"children": [
+				{
+					"name": "shoot",
+					"children": [
+						{
+							"name": "smile",
+							"children": null
+						}
+					]
+				},
+				{
+					"name": "play",
+					"children": null
+				}
+			]
+		}
+	]
+}

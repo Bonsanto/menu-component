@@ -52,19 +52,32 @@ Object.defineProperty(MenuProto, 'content', {
 });
 
 MenuProto.createdCallback = function () {
+	this.style.cursor = "default";
+
+	//todo: think a way to avoid the use of the id attribute.
+
 	var shadow = this.createShadowRoot();
 	//var _this = this;
 
-	var lists = liCreator(this.getAttribute("content").header);
+	var ul = document.createElement("ul");
+	ul.className = "nav";
+	shadow.appendChild(ul);
+	var lists = lidivCreator(this.getAttribute("content").header);
+
 };
 
+
+// ------>|------>
+// ------>|
 //todo: simplify in 1 line Favio HW hint: foreach.
-var liCreator = function (xson) {
+var lidivCreator = function (xson) {
 	var lis = [];
+	var div;
 
 	//Content is the name of the property that holds the json.
 	for (var cell in xson) {
 		lis.push(document.createElement("li"));
+
 	}
 
 	return lis;

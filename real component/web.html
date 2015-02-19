@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+	<meta charset="UTF-8">
+	<title></title>
+</head>
+<body>
+<button onclick="readFiles()"></button>
+<label for="text"></label>
+<textarea name="blah" id="text" cols="30" rows="10"></textarea>
+<script>
+	var readFiles = function() {
+		var xml = new XMLHttpRequest();
+
+		xml.onreadystatechange = function () {
+			if (xml.status === 200 && xml.readyState === 4) document.getElementById("text").textContent = xml.responseText;
+		};
+
+		xml.open("GET", "componentSettings.js", true);
+		xml.send();
+	};
+</script>
+</body>
+</html>

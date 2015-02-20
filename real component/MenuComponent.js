@@ -1,10 +1,5 @@
 var MenuProto = Object.create(HTMLDivElement.prototype);
 
-Object.defineProperty(MenuProto, 'content', {
-	value: {},
-	writable: true
-});
-
 MenuProto.createdCallback = function () {
 	var shadow = this.createShadowRoot();
 	var style = document.createElement("style");

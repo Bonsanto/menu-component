@@ -50,8 +50,7 @@ var lidivCreator = function (xson, lvl) {
 		if (element.children !== undefined) {
 			var ul = document.createElement("ul");
 
-			//todo: add this to the css file.
-			div.innerHTML += (lvl !== 0) ? "<span class='darrow' style='font-size: 9pt'>&#9654;</span>" : "<span class='darrow' style='font-size: 9pt'>&#9660;</span>";
+			div.innerHTML += (lvl !== 0) ? "<span class='rarrow'>&#9654;</span>" : "<span class='darrow'>&#9660;</span>";
 			li.appendChild(ul);
 
 			lidivCreator(element.children).forEach(function (ele) {
@@ -67,7 +66,6 @@ var readFiles = function (element, fun) {
 		styles = element.getAttribute("css"),
 		settingsReader = new XMLHttpRequest(),
 		cssReader = new XMLHttpRequest();
-
 
 	settingsReader.onreadystatechange = function (e) {
 		if (settingsReader.status === 200 && settingsReader.readyState === 4) {

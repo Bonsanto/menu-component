@@ -69,3 +69,13 @@ ul, ol {
 	right: -150px;
 	top: 0;
 }
+
+.rarrow {
+	font-size: 9pt;
+	position:absolute;
+	right: 4px;
+}
+
+.darrow {
+	font-size: 9pt;
+}

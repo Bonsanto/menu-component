@@ -13,10 +13,10 @@ ul, ol {
 }
 
 .nav li div {
-	background: -webkit-linear-gradient(midnightblue, blue); /* For Safari 5.1 to 6.0 */
-	background: -o-linear-gradient(midnightblue, blue); /* For Opera 11.1 to 12.0 */
-	background: -moz-linear-gradient(midnightblue, blue); /* For Firefox 3.6 to 15 */
-	background: linear-gradient(120deg, midnightblue, blue); /* Standard syntax */
+	background: -webkit-linear-gradient(120deg, dimgray, lightsteelblue); /* For Safari 5.1 to 6.0 */
+	background: -o-linear-gradient(120deg, dimgray, lightsteelblue); /* For Opera 11.1 to 12.0 */
+	background: -moz-linear-gradient(120deg, dimgray, lightsteelblue); /* For Firefox 3.6 to 15 */
+	background: linear-gradient(120deg, dimgray, lightsteelblue); /* Standard syntax */
 	color: white;
 	text-decoration: none;
 	padding: 10px 15px;
@@ -34,11 +34,11 @@ ul, ol {
 }
 
 .nav li:hover > div {
-	background: #434343;
+	background: cornflowerblue;
 }
 
 .nav li div:hover {
-	background: #434343;
+	background: cornflowerblue;
 }
 
 .nav li ul {

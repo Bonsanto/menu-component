@@ -72,8 +72,13 @@ var lidivCreator = function (xson) {
 			}
 		}
 
+		//
+
 		if (element.children !== undefined) {
-			var ul = document.createElement("ul");
+			var arrow = document.createElement("span"),
+			ul = document.createElement("ul");
+
+			div.innerHTML += "<span class='darrow' style='font-size: 9pt'>&#9654;</span>";
 			li.appendChild(ul);
 
 			lidivCreator(element.children).forEach(function (ele) {

@@ -13,10 +13,19 @@ var settings = {
 							},
 							"dblclick": function () {
 								alert("OMG DBL CLICKED");
+							},
+							"keypress": function (element) {
+								alert("Key pressed" + element.keyCode)
 							}
 						},
 						{
-							"name": "Open last"
+							"name": "Open last",
+							"click": function () {
+								alert("OMG CLICKED");
+							},
+							"dblclick": function () {
+								alert("OMG DBL CLICKED");
+							}
 						},
 						{
 							"name": "Open From Web",
@@ -145,14 +154,12 @@ var settings = {
 		},
 		{
 			"name": "Jojoto"
+		},
+		{
+			"name": "patria querida"
+		},
+		{
+			"name": "tuya es mi vida"
 		}
 	]
 };
-
-var a = "onclick";
-var b = "click";
-
-var x = a.split("on");
-var d = b.split("on")
-console.log(x);
-console.log(d);

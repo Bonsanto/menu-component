@@ -16,7 +16,6 @@ MenuProto.createdCallback = function () {
 		div.className = "realdiv";
 		div.style.cursor = "default"; //this is how the cursor is showed.
 		ul.className = "nav";
-		//todo: unfortunately this is how it is done :,(.
 		style.textContent = styles;
 
 		shadow.appendChild(style);

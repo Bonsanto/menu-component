@@ -11,13 +11,13 @@ MenuProto.createdCallback = function () {
 	var div = document.createElement("div");
 	var ul = document.createElement("ul");
 
-	var exe = function (something) {
-		eval(something);
+	var exe = function (setts, styles) {
+		eval(setts);
 		div.className = "realdiv";
 		div.style.cursor = "default";
 		ul.className = "nav";
 		//todo: unfortunately this is how it is done :,(.
-		style.textContent = "* {padding: 0;margin: 0;} .realdiv {margin: auto;width: 500px; font-family: Arial, Helvetica, sans-serif;} ul, ol {list-style: none;} .nav li div {background: linear-gradient(blue,black); background: -webkit-linear-gradient(black, blue); background: -o-linear-gradient(black, blue); background: -moz-linear-gradient(black, blue);color: white;text-decoration: none;padding: 10px 15px;display: block;-webkit-touch-callout: none;-webkit-user-select: none;-khtml-user-select: none;-moz-user-select: none;-ms-user-select: none;user-select: none;} .nav > li {float: left;} .nav li:hover > div{background:#434343;} .nav li div:hover {background: #434343;} .nav li ul {display: none;position: absolute;min-width: 150px;} .nav li:hover > ul {display: block;} .nav li ul li {position: relative;} .nav li ul li ul {right: -150px;top: 0;} .nav li ul li ul li ul li ul{right: -150px;top: 0;}";
+		style.textContent = styles;
 
 		shadow.appendChild(style);
 		div.appendChild(ul);
@@ -32,14 +32,29 @@ MenuProto.createdCallback = function () {
 };
 
 var readFiles = function (element, fun) {
-	var xml = new XMLHttpRequest();
+	var skeleton = element.getAttribute("src"),
+		styles = element.getAttribute("css"),
+		settingsReader = new XMLHttpRequest(),
+		cssReader = new XMLHttpRequest();
 
-	xml.onreadystatechange = function (e) {
-		if (xml.status === 200 && xml.readyState === 4) fun(xml.responseText);
+
+	settingsReader.onreadystatechange = function (e) {
+		if (settingsReader.status === 200 && settingsReader.readyState === 4) {
+
+			cssReader.onreadystatechange = function (e) {
+				if (cssReader.status === 200 && cssReader.readyState === 4) fun(settingsReader.responseText, cssReader.responseText);
+				else console.log(styles + " wasn't found");
+			};
+
+			cssReader.open("GET", styles, true);
+			cssReader.send();
+		} else {
+			console.log(skeleton + " wasn't found");
+		}
 	};
 
-	xml.open("GET", element.getAttribute("src"), true);
-	xml.send();
+	settingsReader.open("GET", skeleton, true);
+	settingsReader.send();
 };
 
 var lidivCreator = function (xson) {
@@ -61,15 +76,6 @@ var lidivCreator = function (xson) {
 		}
 		return li;
 	});
-};
-
-var settingsReader = function (location) {
-	//If all file API are supported ...
-	if (window.File && window.FileReader && window.FileList && window.Blob) {
-		var reader = new FileReader();
-	} else {
-		console.log("File API not supported");
-	}
 };
 
 var XMenu = document.registerElement('x-menu', {

@@ -7,7 +7,13 @@ var settings = {
 					"name": "Open",
 					"children": [
 						{
-							"name": "Open recent"
+							"name": "Open recent",
+							"click": function () {
+								alert("OMG CLICKED");
+							},
+							"dblclick": function () {
+								alert("OMG DBL CLICKED");
+							}
 						},
 						{
 							"name": "Open last"
@@ -142,3 +148,11 @@ var settings = {
 		}
 	]
 };
+
+var a = "onclick";
+var b = "click";
+
+var x = a.split("on");
+var d = b.split("on")
+console.log(x);
+console.log(d);

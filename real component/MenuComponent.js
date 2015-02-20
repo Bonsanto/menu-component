@@ -14,7 +14,7 @@ MenuProto.createdCallback = function () {
 	var exe = function (setts, styles) {
 		eval(setts);
 		div.className = "realdiv";
-		div.style.cursor = "default";
+		div.style.cursor = "default"; //this is how the cursor is showed.
 		ul.className = "nav";
 		//todo: unfortunately this is how it is done :,(.
 		style.textContent = styles;
@@ -48,6 +48,7 @@ var readFiles = function (element, fun) {
 
 			cssReader.open("GET", styles, true);
 			cssReader.send();
+
 		} else if (skeleton.status === 404) console.log(skeleton + " wasn't found");
 	};
 
@@ -62,6 +63,14 @@ var lidivCreator = function (xson) {
 
 		div.textContent = element.name;
 		li.appendChild(div);
+
+		for (var property in element) {
+			if (element.hasOwnProperty(property)) {
+				if (typeof element[property] === "function") {
+					div.addEventListener(property, element[property]);
+				}
+			}
+		}
 
 		if (element.children !== undefined) {
 			var ul = document.createElement("ul");

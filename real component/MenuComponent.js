@@ -43,14 +43,12 @@ var readFiles = function (element, fun) {
 
 			cssReader.onreadystatechange = function (e) {
 				if (cssReader.status === 200 && cssReader.readyState === 4) fun(settingsReader.responseText, cssReader.responseText);
-				else console.log(styles + " wasn't found");
+				else if (cssReader.status === 404) console.log(styles + " wasn't found");
 			};
 
 			cssReader.open("GET", styles, true);
 			cssReader.send();
-		} else {
-			console.log(skeleton + " wasn't found");
-		}
+		} else if (skeleton.status === 404) console.log(skeleton + " wasn't found");
 	};
 
 	settingsReader.open("GET", skeleton, true);
@@ -64,7 +62,6 @@ var lidivCreator = function (xson) {
 
 		div.textContent = element.name;
 		li.appendChild(div);
-		console.log(element.children);
 
 		if (element.children !== null) {
 			var ul = document.createElement("ul");

@@ -19,7 +19,7 @@ ul, ol {
 	background: linear-gradient(120deg, dimgray, lightsteelblue); /* Standard syntax */
 	color: white;
 	text-decoration: none;
-	padding: 10px 15px;
+	padding: 10px 10px;
 	display: block;
 	-webkit-touch-callout: none;
 	-webkit-user-select: none;
@@ -61,6 +61,11 @@ ul, ol {
 }
 
 .nav li ul li ul li ul li ul {
+	right: -150px;
+	top: 0;
+}
+
+.nav li ul li ul li ul li ul li ul li ul{
 	right: -150px;
 	top: 0;
 }

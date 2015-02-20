@@ -8,15 +8,46 @@ var settings = {
 					"children": [
 						{
 							"name": "Open recent",
-							"children": null,
-							"onclick": function () {
-								alert("clicked on recent");
-							}
+							"children": null
+						},
+						{
+							"name": "Open last",
+							"children": null
+						},
+						{
+							"name": "Open From Web",
+							"children": [
+								{
+									"name": "blah",
+									"children": null
+								},
+								{
+									"name": "nasus counters",
+									"children": [
+										{
+											"name": "blah",
+											"children": null
+										},
+										{
+											"name": "nasus counters",
+											"children": null
+										}
+									]
+								}
+							]
 						}
 					]
 				},
 				{
 					"name": "Close",
+					"children": null
+				},
+				{
+					"name": "Save",
+					"children": null
+				},
+				{
+					"name": "Save as",
 					"children": null
 				}
 			]

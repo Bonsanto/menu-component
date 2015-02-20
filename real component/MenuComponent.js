@@ -38,9 +38,6 @@ var readFiles = function (element, fun) {
 		if (xml.status === 200 && xml.readyState === 4) fun(xml.responseText);
 	};
 
-	//xml.onreadystatechange = function () {
-	//};
-
 	xml.open("GET", element.getAttribute("src"), true);
 	xml.send();
 };

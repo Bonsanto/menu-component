@@ -7,30 +7,25 @@ var settings = {
 					"name": "Open",
 					"children": [
 						{
-							"name": "Open recent",
-							"children": null
+							"name": "Open recent"
 						},
 						{
-							"name": "Open last",
-							"children": null
+							"name": "Open last"
 						},
 						{
 							"name": "Open From Web",
 							"children": [
 								{
-									"name": "blah",
-									"children": null
+									"name": "blah"
 								},
 								{
 									"name": "nasus counters",
 									"children": [
 										{
-											"name": "blah",
-											"children": null
+											"name": "blah"
 										},
 										{
-											"name": "nasus counters",
-											"children": null
+											"name": "nasus counters"
 										}
 									]
 								}
@@ -39,16 +34,13 @@ var settings = {
 					]
 				},
 				{
-					"name": "Close",
-					"children": null
+					"name": "Close"
 				},
 				{
-					"name": "Save",
-					"children": null
+					"name": "Save"
 				},
 				{
-					"name": "Save as",
-					"children": null
+					"name": "Save as"
 				}
 			]
 		},
@@ -62,27 +54,22 @@ var settings = {
 							"name": "rape",
 							"children": [
 								{
-									"name": "popo",
-									"children": null
+									"name": "popo"
 								},
 								{
-									"name": "popo1",
-									"children": null
+									"name": "popo1"
 								},
 								{
 									"name": "popo2",
 									"children": [
 										{
-											"name": "popo",
-											"children": null
+											"name": "popo"
 										},
 										{
-											"name": "popo1",
-											"children": null
+											"name": "popo1"
 										},
 										{
-											"name": "popo2",
-											"children": null
+											"name": "popo2"
 										}
 									]
 								}
@@ -91,8 +78,7 @@ var settings = {
 					]
 				},
 				{
-					"name": "scam",
-					"children": null
+					"name": "scam"
 				}
 			]
 		},
@@ -106,29 +92,24 @@ var settings = {
 							"name": "smile",
 							"children": [
 								{
-									"name": "popo",
-									"children": null
+									"name": "popo"
 								},
 								{
 									"name": "popo1",
 									"children": [
 										{
-											"name": "popo",
-											"children": null
+											"name": "popo"
 										},
 										{
-											"name": "popo1",
-											"children": null
+											"name": "popo1"
 										},
 										{
-											"name": "popo2",
-											"children": null
+											"name": "popo2"
 										}
 									]
 								},
 								{
-									"name": "popo2",
-									"children": null
+									"name": "popo2"
 								}
 							]
 						}
@@ -138,32 +119,26 @@ var settings = {
 					"name": "play",
 					"children": [
 						{
-							"name": "popo",
-							"children": null
+							"name": "popo"
 						},
 						{
-							"name": "popo1",
-							"children": null
+							"name": "popo1"
 						},
 						{
-							"name": "popo2",
-							"children": null
+							"name": "popo2"
 						}
 					]
 				},
 				{
-					"name": "PATRIA",
-					"children": null
+					"name": "PATRIA"
 				}
 			]
 		},
 		{
-			"name": "Ledezma",
-			"children": null
+			"name": "Ledezma"
 		},
 		{
-			"name": "Jojoto",
-			"children": null
+			"name": "Jojoto"
 		}
 	]
 };

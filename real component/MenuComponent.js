@@ -63,7 +63,7 @@ var lidivCreator = function (xson) {
 		div.textContent = element.name;
 		li.appendChild(div);
 
-		if (element.children !== null) {
+		if (element.children !== undefined) {
 			var ul = document.createElement("ul");
 			li.appendChild(ul);
 

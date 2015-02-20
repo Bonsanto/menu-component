@@ -23,12 +23,43 @@ MenuProto.createdCallback = function () {
 		div.appendChild(ul);
 		shadow.appendChild(div);
 
-		lidivCreator(settings.header).forEach(function (element) {
+		lidivCreator(settings.header, 0).forEach(function (element) {
 			ul.appendChild(element);
 		});
 	};
 
 	readFiles(this, exe);
+};
+
+var lidivCreator = function (xson, lvl) {
+	return xson.map(function (element) {
+		var li = document.createElement("li"),
+			div = document.createElement("div");
+
+		div.textContent = element.name;
+		li.appendChild(div);
+
+		for (var property in element) {
+			if (element.hasOwnProperty(property)) {
+				if (typeof element[property] === "function") {
+					div.addEventListener(property, element[property]);
+				}
+			}
+		}
+
+		if (element.children !== undefined) {
+			var ul = document.createElement("ul");
+
+			//todo: add this to the css file.
+			div.innerHTML += (lvl !== 0) ? "<span class='darrow' style='font-size: 9pt'>&#9654;</span>" : "<span class='darrow' style='font-size: 9pt'>&#9660;</span>";
+			li.appendChild(ul);
+
+			lidivCreator(element.children).forEach(function (ele) {
+				ul.appendChild(ele);
+			});
+		}
+		return li;
+	});
 };
 
 var readFiles = function (element, fun) {
@@ -54,39 +85,6 @@ var readFiles = function (element, fun) {
 
 	settingsReader.open("GET", skeleton, true);
 	settingsReader.send();
-};
-
-var lidivCreator = function (xson) {
-	return xson.map(function (element) {
-		var li = document.createElement("li"),
-			div = document.createElement("div");
-
-		div.textContent = element.name;
-		li.appendChild(div);
-
-		for (var property in element) {
-			if (element.hasOwnProperty(property)) {
-				if (typeof element[property] === "function") {
-					div.addEventListener(property, element[property]);
-				}
-			}
-		}
-
-		//
-
-		if (element.children !== undefined) {
-			var arrow = document.createElement("span"),
-			ul = document.createElement("ul");
-
-			div.innerHTML += "<span class='darrow' style='font-size: 9pt'>&#9654;</span>";
-			li.appendChild(ul);
-
-			lidivCreator(element.children).forEach(function (ele) {
-				ul.appendChild(ele);
-			});
-		}
-		return li;
-	});
 };
 
 var XMenu = document.registerElement('x-menu', {

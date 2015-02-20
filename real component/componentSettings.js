@@ -60,7 +60,33 @@ var settings = {
 					"children": [
 						{
 							"name": "rape",
-							"children": null
+							"children": [
+                                {
+                                    "name": "popo",
+                                    "children": null
+                                },
+                                {
+                                    "name": "popo1",
+                                    "children": null
+                                },
+                                {
+                                    "name": "popo2",
+                                    "children":[
+                                        {
+                                            "name": "popo",
+                                            "children": null
+                                        },
+                                        {
+                                            "name": "popo1",
+                                            "children": null
+                                        },
+                                        {
+                                            "name": "popo2",
+                                            "children": null
+                                        }
+                                    ]
+                                }
+                            ]
 						}
 					]
 				},
@@ -78,15 +104,66 @@ var settings = {
 					"children": [
 						{
 							"name": "smile",
-							"children": null
-						}
+							"children": [
+                                {
+                                    "name": "popo",
+                                    "children": null
+                                },
+                                {
+                                    "name": "popo1",
+                                    "children": [
+                                        {
+                                            "name": "popo",
+                                            "children": null
+                                        },
+                                        {
+                                            "name": "popo1",
+                                            "children": null
+                                        },
+                                        {
+                                            "name": "popo2",
+                                            "children": null
+                                        }
+                                    ]
+                                },
+                                {
+                                    "name": "popo2",
+                                    "children": null
+                                }
+                            ]
+                }
 					]
 				},
 				{
 					"name": "play",
-					"children": null
-				}
+					"children": [
+                        {
+                            "name": "popo",
+                            "children": null
+                        },
+                        {
+                            "name": "popo1",
+                            "children": null
+                        },
+                        {
+                            "name": "popo2",
+                            "children": null
+                        }
+                    ]
+				},
+                {
+                    "name": "PATRIA",
+                    "children": null
+                }
 			]
-		}
-	]
+        },
+        {
+            "name": "Ledezma",
+            "children": null
+        },
+        {
+            "name": "Jojoto",
+            "children": null
+        }
+    ]
 };

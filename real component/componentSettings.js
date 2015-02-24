@@ -56,6 +56,12 @@ var settings = {
 				},
 				{
 					"name": "Save as"
+				},
+				{
+					"name": "Alberto"
+				},
+				{
+					"name": "Orangel"
 				}
 			]
 		},

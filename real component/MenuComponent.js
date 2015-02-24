@@ -8,14 +8,14 @@ MenuProto.createdCallback = function () {
 
 	var exe = function (setts, styles) {
 		eval(setts);
+		style.textContent = styles;
 		div.className = "realdiv";
 		div.style.cursor = "default"; //this is how the cursor is showed.
 		ul.className = "nav";
-		style.textContent = styles;
 
 		shadow.appendChild(style);
-		div.appendChild(ul);
 		shadow.appendChild(div);
+		div.appendChild(ul);
 
 		lidivCreator(settings.header, 0).forEach(function (element) {
 			ul.appendChild(element);
